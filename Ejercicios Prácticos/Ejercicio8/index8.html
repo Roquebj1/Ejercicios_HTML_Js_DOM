@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicar Arreglo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4"> Multiplicar Arreglo</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio8">Ejercicio 8: Multiplicar Arreglo</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio8">
+            <h2>Ejercicio 8: Multiplicar Arreglo</h2>
+            <p>Calcula el producto de los elementos en un arreglo de números:</p>
+            <div class="form-group">
+                <label for="arreglo">Arreglo (separado por comas):</label>
+                <input type="text" class="form-control" id="arreglo">
+            </div>
+            <button class="btn btn-primary" onclick="multiplicarArreglo()">Multiplicar</button>
+            <p class="mt-2" id="resultado"></p>
+        </section>
+    </div>
+
+    <script>
+        function multiplicarArreglo() {
+            const arregloStr = document.getElementById('arreglo').value;
+            const arreglo = arregloStr.split(',').map(Number);
+            const producto = arreglo.reduce((total, num) => total * num, 1);
+            document.getElementById('resultado').textContent = `Producto de los elementos: ${producto}`;
+        }
+    </script>
+</body>
+</html>

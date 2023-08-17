@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar Arreglo entre Rango</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4"> Sumar Arreglo entre Rango</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio9">Ejercicio 9: Sumar Arreglo entre Rango</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio9">
+            <h2>Ejercicio 9: Sumar Arreglo entre Rango</h2>
+            <p>Calcula la suma de los elementos en un rango de un arreglo de números:</p>
+            <div class="form-group">
+                <label for="arreglo">Arreglo (separado por comas):</label>
+                <input type="text" class="form-control" id="arreglo">
+            </div>
+            <div class="form-group">
+                <label for="inicio">Posición inicial:</label>
+                <input type="number" class="form-control" id="inicio">
+            </div>
+            <div class="form-group">
+                <label for="fin">Posición final:</label>
+                <input type="number" class="form-control" id="fin">
+            </div>
+            <button class="btn btn-primary" onclick="calcularSuma()">Sumar</button>
+            <p class="mt-2" id="resultado"></p>
+        </section>
+    </div>
+
+    <script>
+        function sumarArreglo(arr, inicio, fin) {
+            let suma = 0;
+            for (let i = inicio; i <= fin; i++) {
+                suma += arr[i];
+            }
+            return suma;
+        }
+
+        function calcularSuma() {
+            const arregloStr = document.getElementById('arreglo').value;
+            const arreglo = arregloStr.split(',').map(Number);
+            const inicio = parseInt(document.getElementById('inicio').value);
+            const fin = parseInt(document.getElementById('fin').value);
+            const suma = sumarArreglo(arreglo, inicio, fin);
+            document.getElementById('resultado').textContent = `Suma del rango ${inicio} al ${fin}: ${suma}`;
+        }
+    </script>
+</body>
+</html>

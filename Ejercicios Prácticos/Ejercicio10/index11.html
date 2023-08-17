@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Encontrar Máximo sin Math.max</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4"> Encontrar Máximo sin Math.max</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio10">Ejercicio 10: Encontrar Máximo sin Math.max</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio10">
+            <h2>Ejercicio 10: Encontrar Máximo sin Math.max</h2>
+            <p>Encuentra el número máximo de un arreglo sin usar Math.max:</p>
+            <div class="form-group">
+                <label for="arreglo">Arreglo (separado por comas):</label>
+                <input type="text" class="form-control" id="arreglo">
+            </div>
+            <button class="btn btn-primary" onclick="encontrarMaximo()">Encontrar Máximo</button>
+            <p class="mt-2" id="resultado"></p>
+        </section>
+    </div>
+
+    <script>
+        function encontrarMaximo() {
+            const arregloStr = document.getElementById('arreglo').value;
+            const arreglo = arregloStr.split(',').map(Number);
+            
+            let maximo = arreglo[0];
+            for (let i = 1; i < arreglo.length; i++) {
+                if (arreglo[i] > maximo) {
+                    maximo = arreglo[i];
+                }
+            }
+
+            document.getElementById('resultado').textContent = `Máximo sin Math.max: ${maximo}`;
+        }
+    </script>
+</body>
+</html>

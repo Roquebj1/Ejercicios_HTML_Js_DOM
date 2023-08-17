@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cálculo de Impuestos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Cálculo de Impuestos</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio4">Ejercicio 4: Cálculo de Impuestos</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio4">
+            <h2>Ejercicio 4: Cálculo de Impuestos</h2>
+            <p>Calcula el monto de impuestos:</p>
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" class="form-control" id="edad">
+            </div>
+            <div class="form-group">
+                <label for="ingresos">Ingresos:</label>
+                <input type="number" class="form-control" id="ingresos">
+            </div>
+            <button class="btn btn-primary" onclick="calcularImpuestos()">Calcular</button>
+            <p class="mt-2" id="resultado"></p>
+        </section>
+    </div>
+
+    <script>
+        function calcularImpuestos() {
+            const edad = parseInt(document.getElementById('edad').value);
+            const ingresos = parseFloat(document.getElementById('ingresos').value);
+            let impuestos = 0;
+
+            if (edad >= 18 && ingresos >= 1000) {
+                impuestos = ingresos * 0.4; // 40% de los ingresos
+            }
+
+            document.getElementById('resultado').textContent = `Impuestos a pagar: ${impuestos.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

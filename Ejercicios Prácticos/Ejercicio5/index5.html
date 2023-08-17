@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Imprimir un Arreglo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Imprimir un Arreglo</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio5">Ejercicio 5: Imprimir un Arreglo</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio5">
+            <h2>Ejercicio 5: Imprimir un Arreglo</h2>
+            <p>Imprime los ítems del arreglo en una lista no ordenada:</p>
+            <button class="btn btn-primary" onclick="imprimirArreglo()">Imprimir</button>
+            <ul class="mt-2" id="resultado"></ul>
+        </section>
+    </div>
+
+    <script>
+        function imprimirArreglo() {
+            const items = ["Hola", 2, "Mundo"];
+            const lista = document.getElementById('resultado');
+            lista.innerHTML = ''; // Limpiamos la lista previa
+
+            items.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${String.fromCharCode(97 + index)}. ${item}`;
+                lista.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

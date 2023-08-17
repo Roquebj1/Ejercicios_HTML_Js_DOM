@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número de Caracteres</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c3e6f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Número de Caracteres</h1>
+        
+        <nav class="mb-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#ejercicio6">Ejercicio 6: Número de Caracteres</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="ejercicio6">
+            <h2>Ejercicio 6: Número de Caracteres</h2>
+            <p>Calcula el número de veces que aparece un caracter en un string:</p>
+            <div class="form-group">
+                <label for="cadena">Cadena:</label>
+                <input type="text" class="form-control" id="cadena">
+            </div>
+            <div class="form-group">
+                <label for="caracter">Caracter:</label>
+                <input type="text" class="form-control" id="caracter">
+            </div>
+            <button class="btn btn-primary" onclick="calcularNumeroDeCaracteres()">Calcular</button>
+            <p class="mt-2" id="resultado"></p>
+        </section>
+    </div>
+
+    <script>
+        function numeroDeCaracteres(cadena, caracter) {
+            let count = 0;
+            for (let i = 0; i < cadena.length; i++) {
+                if (cadena[i] === caracter) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function calcularNumeroDeCaracteres() {
+            const cadena = document.getElementById('cadena').value;
+            const caracter = document.getElementById('caracter').value;
+            const count = numeroDeCaracteres(cadena, caracter);
+            document.getElementById('resultado').textContent = `Número de veces que aparece el caracter: ${count}`;
+        }
+    </script>
+</body>
+</html>
